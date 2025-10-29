@@ -1,0 +1,46 @@
+# ----------------------------
+# Node + TypeScript + Drizzle
+# ----------------------------
+
+# Environment variables
+.env
+.env.*.local
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Local debugging files
+coverage/
+tmp/
+.cache/
+
+# --------------------
+# Drizzle ORM
+# --------------------
+drizzle/*.sqlite          # If using local SQLite
+drizzle/migrations/.cache # Cache created by drizzle-kit
+drizzle/db                # Local DB folder if created

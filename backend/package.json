@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.9.1",
+    "@types/nodemailer": "^7.0.3",
+    "drizzle-kit": "^0.31.5",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@google/genai": "^1.27.0",
+    "@google/generative-ai": "^0.24.1",
+    "@googleapis/youtube": "^29.0.0",
+    "@neondatabase/serverless": "^1.0.2",
+    "axios": "^1.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "nodemailer": "^7.0.10"
+  }
+}
