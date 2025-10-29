@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch index.ts",
     "start": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "worker:email": "node dist/queue/workers/emailWorker.js"
   },
   "keywords": [],
   "author": "",
@@ -30,12 +31,15 @@
     "@googleapis/youtube": "^29.0.0",
     "@neondatabase/serverless": "^1.0.2",
     "axios": "^1.13.0",
+    "bullmq": "^5.62.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
+    "ioredis": "^5.8.2",
     "morgan": "^1.10.1",
-    "nodemailer": "^7.0.10"
+    "nodemailer": "^7.0.10",
+    "redis": "^5.9.0"
   }
 }

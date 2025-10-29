@@ -17,7 +17,6 @@ export async function sendVideoLinkEmail(
   subject: string,
   html: string
 ) {
-  console.log(transport);
   return transport.sendMail({
     from: process.env.EMAIL_USER,
     to,

@@ -8,6 +8,7 @@ import {
   fetchRecentVideosByChannel,
   getChannelIdFromUsername,
 } from "../lib/youtube.js";
+import { addEmailToQueue, emailQueue } from "../queue/emailQueue.js";
 dotenv.config();
 
 const router = express.Router();
@@ -68,6 +69,8 @@ router.post("/analyze", async (req, res) => {
       }
     }
 
+    console.log("calling api");
+
     // ✅ Send only one email for all videos
     if (emailTo && emailHtmlContent.trim()) {
       const now = new Date().toLocaleString("en-IN", {
@@ -83,13 +86,11 @@ router.post("/analyze", async (req, res) => {
     <hr/>
   `;
 
-      await sendVideoLinkEmail(
-        emailTo,
-        `YouTube Video Analysis Report (${results.length} videos)`,
-        `<h2>YouTube AI Analysis Report</h2>
-     ${summaryHtml}
-     ${emailHtmlContent}`
-      );
+      addEmailToQueue({
+        to: emailTo,
+        subject: `YouTube Video Analysis Report (${results.length} videos)`,
+        html: `<h2>YouTube AI Analysis Report</h2>${summaryHtml}${emailHtmlContent}`,
+      });
     }
 
     return res.json({

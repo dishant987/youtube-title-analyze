@@ -5,6 +5,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import videosRouter from "./routes/videos.js";
+import "./queue/redisClient.js";
 dotenv.config();
 
 const app = express();
